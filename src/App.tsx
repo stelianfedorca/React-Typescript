@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import FilterableProductTable from './ThinkingInReact/FilterableProductTable';
+import { FilterableProductTable } from './ThinkingInReact/FilterableProductTable';
 
 const PRODUCTS = [
   { category: 'Fruits', price: '$1', stocked: true, name: 'Apple' },

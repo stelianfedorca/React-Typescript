@@ -9,6 +9,6 @@ interface ProductProps {
   products: Product[];
 }
 
-export default function ProductTable({ products }: ProductProps) {
+export function ProductTable({ products }: ProductProps) {
   return <div></div>;
 }

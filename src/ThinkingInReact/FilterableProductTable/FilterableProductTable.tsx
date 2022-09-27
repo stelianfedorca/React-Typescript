@@ -1,5 +1,5 @@
-import ProductTable from './ProductTable';
-import { SearchBar } from './SearchBar';
+import { ProductTable } from '../ProductTable';
+import { SearchBar } from '../SearchBar';
 
 interface Product {
   category: string;
@@ -11,7 +11,7 @@ interface Product {
 interface ProductProps {
   products: Product[];
 }
-export default function FilterableProductTable({ products }: ProductProps) {
+export function FilterableProductTable({ products }: ProductProps) {
   return (
     <div>
       <SearchBar />
