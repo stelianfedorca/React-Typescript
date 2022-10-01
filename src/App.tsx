@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import { FilterableProductTable } from './ThinkingInReact/FilterableProductTable';
+import { Profile } from './DescribingTheUI/Gallery';
+import Gallery from './DescribingTheUI/Gallery';
 
 const PRODUCTS = [
   { category: 'Fruits', price: '$1', stocked: true, name: 'Apple' },
@@ -11,9 +13,12 @@ const PRODUCTS = [
   { category: 'Vegetables', price: '$1', stocked: true, name: 'Peas' },
 ];
 function App() {
+  const name = 'Steli';
+
   return (
     <div className="App">
-      <FilterableProductTable products={PRODUCTS} />
+      <h1>Hello {name}, good to see you!</h1>
+      {/* <FilterableProductTable products={PRODUCTS} /> */}
     </div>
   );
 }
