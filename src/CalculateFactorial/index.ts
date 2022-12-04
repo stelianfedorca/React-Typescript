@@ -1,0 +1,1 @@
+export { CalculateFactorial } from './CalculateFactorial';

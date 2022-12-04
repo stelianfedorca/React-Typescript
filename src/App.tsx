@@ -1,24 +1,40 @@
-import { useState } from 'react';
 import './App.css';
-import { FilterableProductTable } from './ThinkingInReact/FilterableProductTable';
-import { Profile } from './DescribingTheUI/Gallery';
-import Gallery from './DescribingTheUI/Gallery';
+import { Todos } from './Todos';
+import { useCallback, useState } from 'react';
+import { CalculateFactorial } from './CalculateFactorial';
+import { useToggle } from './hooks';
 
-const PRODUCTS = [
-  { category: 'Fruits', price: '$1', stocked: true, name: 'Apple' },
-  { category: 'Fruits', price: '$1', stocked: true, name: 'Dragonfruit' },
-  { category: 'Fruits', price: '$2', stocked: false, name: 'Passionfruit' },
-  { category: 'Vegetables', price: '$2', stocked: true, name: 'Spinach' },
-  { category: 'Vegetables', price: '$4', stocked: false, name: 'Pumpkin' },
-  { category: 'Vegetables', price: '$1', stocked: true, name: 'Peas' },
-];
+// useCallback - returns a memoized callback function
+// allows to isolate resource intensive functions so that they will not automatically run on every render
+// this can improve performance
+
+// useMemo - return a memoized value
+// allows caching a value so that it does not need to be recalculated during re-renders
+
 function App() {
-  const name = 'Steli';
+  const [todos, setTodos] = useState<string[]>([]);
+  const [count, setCount] = useState<number>(0);
 
+  const [isVisible, toggleVisible] = useToggle(false);
+
+  console.log('app');
+
+  const addTodo = useCallback(() => {
+    setTodos((todos) => [...todos, 'todo']);
+  }, []);
+
+  function increment() {
+    setCount((count) => count + 1);
+  }
   return (
     <div className="App">
-      <h1>Hello {name}, good to see you!</h1>
-      {/* <FilterableProductTable products={PRODUCTS} /> */}
+      <button onClick={toggleVisible}>Hello</button>
+      {isVisible && <div>World</div>}
+      {/* <CalculateFactorial /> */}
+      {/* <Todos todos={todos} addTodo={addTodo} />
+      <hr />
+      Count: {count}
+      <button onClick={increment}>Increment</button> */}
     </div>
   );
 }
