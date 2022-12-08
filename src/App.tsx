@@ -3,6 +3,7 @@ import { Todos } from './Todos';
 import { useCallback, useState } from 'react';
 import { CalculateFactorial } from './CalculateFactorial';
 import { useToggle } from './hooks';
+import { Accordion } from './components';
 
 // useCallback - returns a memoized callback function
 // allows to isolate resource intensive functions so that they will not automatically run on every render
@@ -15,9 +16,7 @@ function App() {
   const [todos, setTodos] = useState<string[]>([]);
   const [count, setCount] = useState<number>(0);
 
-  const [isVisible, toggleVisible] = useToggle(false);
-
-  console.log('app');
+  // const [isVisible, toggleVisible] = useToggle(false);
 
   const addTodo = useCallback(() => {
     setTodos((todos) => [...todos, 'todo']);
@@ -28,8 +27,9 @@ function App() {
   }
   return (
     <div className="App">
-      <button onClick={toggleVisible}>Hello</button>
-      {isVisible && <div>World</div>}
+      <Accordion />
+      {/* <button onClick={toggleVisible}>Hello</button>
+      {isVisible && <div>World</div>} */}
       {/* <CalculateFactorial /> */}
       {/* <Todos todos={todos} addTodo={addTodo} />
       <hr />
