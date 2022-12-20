@@ -28,13 +28,6 @@ function App() {
   return (
     <div className="App">
       <Accordion />
-      {/* <button onClick={toggleVisible}>Hello</button>
-      {isVisible && <div>World</div>} */}
-      {/* <CalculateFactorial /> */}
-      {/* <Todos todos={todos} addTodo={addTodo} />
-      <hr />
-      Count: {count}
-      <button onClick={increment}>Increment</button> */}
     </div>
   );
 }
