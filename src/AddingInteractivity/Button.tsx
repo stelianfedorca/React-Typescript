@@ -1,7 +1,8 @@
-export default function Button() {
-  function handleClick() {
-    alert('You clicked me!');
-  }
+type ButtonProps = {
+  title?: string;
+  onClick?: () => void;
+};
 
-  return <button onClick={handleClick}>Click me!</button>;
+export default function Button({ title, onClick }: ButtonProps) {
+  return <button onClick={onClick}>{title}</button>;
 }

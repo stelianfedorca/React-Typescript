@@ -16,6 +16,20 @@ body {
 
 }
 
+.modal {
+  border-style: solid;
+  border-radius: 15px;
+  padding: 20px;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  background-color: darkcyan;
+}
+
+.white-text {
+  color: white;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
